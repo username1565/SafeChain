@@ -48,7 +48,7 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, Object& entry)
 {
     entry.push_back(Pair("txid", tx.GetHash().GetHex()));
     entry.push_back(Pair("version", tx.nVersion));
-    entry.push_back(Pair("time", (boost::int64_t)tx.nTime));
+    //entry.push_back(Pair("time", (boost::int64_t)tx.nTime));			//https://github.com/iquidus/explorer/issues/434#issuecomment-764502158 - fix for iqiudus-exploere 1.7.4-stable
     entry.push_back(Pair("locktime", (boost::int64_t)tx.nLockTime));
     Array vin;
     BOOST_FOREACH(const CTxIn& txin, tx.vin)
